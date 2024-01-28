@@ -1,1 +1,10 @@
-タスク
+<h1><%= link_to "Todo App", "/todos" %></h1>
+
+<div>
+  <h2>タスク一覧</h2>
+  <%= link_to "Todo作成", "/todos/new" %>
+  <% @todos.each do |todo| %>
+    <p><%= todo.title %></p>
+    <%= link_to "削除", "/todos/#{todo.id}", data: { turbo_method: :delete } %>
+  <% end %>
+</div>

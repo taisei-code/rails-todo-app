@@ -1,0 +1,9 @@
+<h1><%= link_to "Todo App", "/todos" %></h1>
+
+<div>
+  <h2>タスク作成</h2>
+  <%= form_tag("/todos/create") do %>
+    <input name="title">
+    <input type="submit" value="追加">
+  <% end %>
+</div>
