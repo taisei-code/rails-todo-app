@@ -9,15 +9,23 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(title: params[:title])
+    @todo = Todo.new(todo_params)
     if @todo.save
-      redirect_to action: :index
+      redirect_to @todo
+    else
+      flash[:notice] = "エラー"
     end
   end
 
   def destroy
     @todo = Todo.find(params[:id])
     @todo.destroy
+  end
+
+  private
+
+  def todo_params
+    params.require(:todos).permit(:title, :completed)
   end
 
 end

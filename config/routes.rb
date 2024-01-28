@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   # root 'todos#index'
 
-  get    'todos'              => 'todos#index'
-  get    'todos/new'          => 'todos#new'
-  post   'todos/create'       => 'todos#create'
-  delete 'todos/:id'  => "todos#destroy"
+  # get    'todos'              => 'todos#index'
+  # get    'todos/new'          => 'todos#new'
+  # post   'todos/create'       => 'todos#create'
+  # delete 'todos/:id'  => "todos#destroy"
   
-  # resources :todos
+  resources :todos
 
 end

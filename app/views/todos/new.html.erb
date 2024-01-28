@@ -2,8 +2,8 @@
 
 <div>
   <h2>タスク作成</h2>
-  <%= form_tag("/todos/create") do %>
-    <input name="title">
-    <input type="submit" value="追加">
+  <%= form_with model: @todo do |form| %>
+    <%= form.text_field :title %>
+    <%= form.submit %>
   <% end %>
 </div>
