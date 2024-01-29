@@ -5,6 +5,6 @@
   <%= link_to "Todo作成", "/todos/new" %>
   <% @todos.each do |todo| %>
     <p><%= todo.title %></p>
-    <%= link_to "削除", "/todos/#{todo.id}", data: { turbo_method: :delete } %>
+    <%= button_to "削除", todo_path(todo), method: :delete %>
   <% end %>
 </div>

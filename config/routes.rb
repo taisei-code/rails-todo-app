@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   # post   'todos/create'       => 'todos#create'
   # delete 'todos/:id'  => "todos#destroy"
   
-  resources :todos
+  resources :todos, only: [:index, :new, :create, :destroy]
 
 end
