@@ -5,8 +5,10 @@
 
   <%= form_with model: @todo do |form| %>
 
-    <%= form.text_field :title %>
-    <%= form.submit "追加" %>
+    <div class="button-container">
+      <div class="form-input"><%= form.text_field :title, placeholder: "New Todo..." %></div>
+      <%= form.submit "追加", class: "link-button" %>
+    </div>
 
   <% end %>
 

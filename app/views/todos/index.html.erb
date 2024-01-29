@@ -1,10 +1,14 @@
 <h1><%= link_to "Todo App", "/todos" %></h1>
 
-<div>
-  <h2>タスク一覧</h2>
-  <%= link_to "Todo作成", "/todos/new" %>
-  <% @todos.each do |todo| %>
-    <p><%= todo.title %></p>
-    <%= button_to "削除", todo_path(todo), method: :delete %>
-  <% end %>
+<div class="button-container">
+  <%= link_to "Todo作成", "/todos/new",  class: "create-button"%>
 </div>
+
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <p><%= todo.title %></p>
+      <%= button_to "削除", todo_path(todo), method: :delete, class: "link-button" %>
+    </li>
+  <% end %>
+</ul>
