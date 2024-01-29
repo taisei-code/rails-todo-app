@@ -10,10 +10,11 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todo_params)
+
     if @todo.save
-      redirect_to @todo
+      redirect_to todos_path
     else
-      flash[:notice] = "エラー"
+      render :new
     end
   end
 
@@ -25,7 +26,7 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todos).permit(:title, :completed)
+    params.require(:todo).permit(:title)
   end
 
 end

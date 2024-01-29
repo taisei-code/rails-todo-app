@@ -2,8 +2,12 @@
 
 <div>
   <h2>タスク作成</h2>
+
   <%= form_with model: @todo do |form| %>
+
     <%= form.text_field :title %>
-    <%= form.submit %>
+    <%= form.submit "追加" %>
+
   <% end %>
+
 </div>
